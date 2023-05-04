@@ -30,12 +30,36 @@ public class RomanConverter{
 
 
 	public static String getRomanFromNumber(int a) throws IllegalArgumentException{
-		//TODO
-		return "";
+		if (a < 1 || a > 3999) {
+			throw new IllegalArgumentException("Le nombre doit être compris entre 1 et 3999");
+		}
+
+		StringBuilder result = new StringBuilder();
+
+		for (RomanNumber symbol : SYMBOLS) {
+			while (a >= symbol.getValue()) {
+				result.append(symbol.getRoman());
+				a -= symbol.getValue();
+			}
+		}
+
+		return result.toString();
 	}
 	
 	public static int getNumberFromRoman(String a) throws IllegalArgumentException{
-		//TODO
-		return 0;
+		if (!VALIDATION_RE.matcher(a).matches() || a.isEmpty()) {
+			throw new IllegalArgumentException("Le nombre romain n'est pas valide");
+		}
+
+		int result = 0;
+
+		for (RomanNumber symbol : SYMBOLS) {
+			while (a.startsWith(symbol.getRoman())) {
+				result += symbol.getValue();
+				a = a.substring(symbol.getRoman().length());
+			}
+		}
+
+		return result;
 	}
 }

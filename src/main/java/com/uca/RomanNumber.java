@@ -84,7 +84,11 @@ public class RomanNumber extends Number implements Comparable<Number>{
 
 	@Override
 	public int compareTo(Number o) {
-		// TODO
+		if (this.value > o.intValue()) {
+			return 1;
+		} else if (this.value < o.intValue()) {
+			return -1;
+		}
 		return 0;
 	}
 }

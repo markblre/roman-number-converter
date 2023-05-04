@@ -50,8 +50,7 @@ public class RomanNumber extends Number implements Comparable<Number>{
 	*/
 	@Override
 	public double doubleValue() {
-		// TODO
-		return 0;
+		return (double) this.value;
 	}
 
 	/**
@@ -59,8 +58,7 @@ public class RomanNumber extends Number implements Comparable<Number>{
 	*/
 	@Override
 	public float floatValue() {
-		// TODO
-		return 0;
+		return (float) this.value;
 	}
 
 	/**
@@ -68,8 +66,7 @@ public class RomanNumber extends Number implements Comparable<Number>{
 	*/
 	@Override
 	public int intValue() {
-		// TODO
-		return 0;
+		return this.value;
 	}
 
 	/**
@@ -77,14 +74,12 @@ public class RomanNumber extends Number implements Comparable<Number>{
 	*/
 	@Override
 	public long longValue() {
-		// TODO
-		return 0;
+		return (long) this.value;
 	}
 
 	@Override
 	public String toString() {
-		//TODO
-		return "";
+		return "The roman number " + this.roman + " is equal to " + this.value + " in decimal.";
 	}
 
 	@Override

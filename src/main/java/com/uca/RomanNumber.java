@@ -1,6 +1,6 @@
 package com.uca;
 
-public class RomanNumber extends Number{
+public class RomanNumber extends Number implements Comparable<Number>{
 	
 	private String roman;
 	
@@ -85,5 +85,11 @@ public class RomanNumber extends Number{
 	public String toString() {
 		//TODO
 		return "";
+	}
+
+	@Override
+	public int compareTo(Number o) {
+		// TODO
+		return 0;
 	}
 }
